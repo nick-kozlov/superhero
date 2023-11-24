@@ -1,0 +1,42 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" controller="AllMissionsCmpController">
+
+    <lightning:messageChannel type="Mission_Selected__c" aura:id="missionSelected"/>
+    <aura:attribute name="title" type="String" default="All Missions"/>
+    <aura:attribute name="allMissions" type="SuperHero_Mission__c[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <div class="slds-p-around_large">
+        <div class="slds-text-heading_large slds-p-bottom_medium">
+            <p class="header">
+                {!v.title}
+                <lightning:icon class="background-color-icon foreground-color-icon" iconName="custom:custom43" size="medium"/>
+            </p>
+        </div>
+        <div class="slds-grid table-header">
+            <div class="slds-col slds-size_1-of-12"><p class="slds-p-left_small">Rank</p></div>
+            <div class="slds-col"><p class="slds-p-left_small">Mission</p></div>
+            <div class="slds-col slds-size_1-of-5"><p class="slds-p-left_small">Guild</p></div>
+            <div class="slds-col slds-size_1-of-8"><p class="slds-p-left_small">Status</p></div>
+        </div>
+        <aura:iteration var="mission" items="{!v.allMissions}">
+            <div aura:id="tablerow" class="slds-grid slds-border_bottom table-row" data-id="{!mission.Id}" data-mission="{!mission}" onclick="{!c.selectMission}">
+                <div class="slds-col slds-size_1-of-12 slds-p-left_small">
+                    <span class="rank-badge slds-badge slds-badge_inverse">
+                        {!mission.Complexity_Rank__c}
+                    </span>
+                </div>
+                <div class="slds-col slds-p-left_small">
+                    {!mission.Subject__c}
+                </div>
+                <div class="slds-col slds-size_1-of-5 slds-p-left_small">
+                    {!mission.Guild__r.Name}
+                </div>
+                <div class="slds-col slds-size_1-of-8 slds-p-left_small">
+                    <span class="{!mission.Status__c == 'Available' ? 'status-badge slds-badge slds-badge_inverse' : 'slds-badge slds-badge_inverse'}">
+                        {!mission.Status__c}
+                    </span>
+                </div>
+            </div>
+        </aura:iteration>
+    </div>
+</aura:component>

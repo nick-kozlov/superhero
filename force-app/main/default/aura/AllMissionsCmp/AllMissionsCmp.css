@@ -1,0 +1,41 @@
+.THIS .header {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 34px;
+    letter-spacing: 0.01em;
+    text-align: left;
+}
+.THIS .table-header {
+    background-color: #F1F3F5;
+    border-radius: 4px;
+    line-height: 38px;
+}
+.THIS .table-row {
+    line-height: 48px;
+}
+.THIS .table-row:hover {
+    background: linear-gradient(0deg, #F1F3F5, #F1F3F5), linear-gradient(0deg, #E6E8EB, #E6E8EB);
+    border-bottom: 1px solid rgba(230, 232, 235, 1);
+    cursor: pointer;
+}
+.THIS .table-row:focus {
+    background: linear-gradient(0deg, #E6E8EB, #E6E8EB), linear-gradient(0deg, #DFE3E6, #DFE3E6);
+    border-bottom: 1px solid rgba(230, 232, 235, 1)
+}
+.THIS .rank-badge {
+    --slds-c-badge-color-background: #181818;
+    --slds-c-badge-radius-border: 5px;
+}
+.THIS .status-badge {
+    --slds-c-badge-color-background: #46A758;
+}
+.THIS .foreground-color-icon {
+    --sds-c-icon-color-foreground: #181818;
+}
+.THIS .background-color-icon{
+    --sds-c-icon-color-background: rgb(255, 255, 255);
+}
+.THIS .selected-row {
+    background: linear-gradient(0deg, #E6E8EB, #E6E8EB), linear-gradient(0deg, #DFE3E6, #DFE3E6);
+    border-bottom: 1px solid rgba(230, 232, 235, 1);
+}
